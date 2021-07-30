@@ -50,5 +50,15 @@ class TestCredentials(unittest.TestCase):
         
         self.new_credentials.delete_logins()
         self.assertEqual(len(Credentials.credentials_list),1)
+    def test_find_login_by_appName(self):
+        '''
+        test to check if we can retrieve username  by app name and display information
+        '''
+        self.new_credentials.save_logins()
+        test_login = Credentials("Twitter","hello","123")
+        test_login.save_logins()
+        
+        found_login = Credentials.find_by_appName("Twitter")
+        self.assertEqual(found_login.account_username,test_login.account_username)
 if __name__ ==  '__main__':
     unittest.main()
