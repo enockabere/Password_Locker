@@ -52,3 +52,9 @@ class Credentials:
             if login.app_name == app_name and login.account_username == account_username and login.account_password == account_password:
                 return True
         return False
+    @classmethod
+    def display_logins(cls):
+        '''
+        method that returns login list
+        '''
+        return cls.credentials_list
