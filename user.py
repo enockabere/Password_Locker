@@ -35,3 +35,16 @@ class User:
         for user in cls.myUser:
             if user.username == username:
                 return user
+    @classmethod
+    def user_exists(cls,username,password):
+        '''
+        method checks if user exits from the user list
+        Args:
+            username: username to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.myUser:
+            if user.username ==username and user.password ==password:
+                return True
+        return False
