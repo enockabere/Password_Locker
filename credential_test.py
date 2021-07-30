@@ -1,4 +1,3 @@
-
 import unittest # Importing the unittest module
 from credential import Credentials
 
@@ -41,5 +40,15 @@ class TestCredentials(unittest.TestCase):
         test_login = Credentials("Twitter","hello","123") #new login
         test_login.save_logins()
         self.assertEqual(len(Credentials.credentials_list),2)
+    def test_delete_login(self):
+        '''
+        test case to test if we can delete credential object from our list
+        '''
+        self.new_credentials.save_logins()
+        test_login = Credentials("Twitter","hello","123")
+        test_login.save_logins()
+        
+        self.new_credentials.delete_logins()
+        self.assertEqual(len(Credentials.credentials_list),1)
 if __name__ ==  '__main__':
     unittest.main()
