@@ -28,3 +28,16 @@ class Credentials:
         method to delete credential object
         '''
         Credentials.credentials_list.remove(self)
+    @classmethod
+    def find_by_appName(cls,app_name):
+        '''
+        Method that takes in a application name and return a string that matches that name
+
+        Args:
+            appName: appName to search for
+        Returns :
+            matching account username
+        '''
+        for login in cls.credentials_list:
+            if login.app_name == app_name:
+                return login
