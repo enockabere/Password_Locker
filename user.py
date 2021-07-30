@@ -22,4 +22,16 @@ class User:
         method to delete a user object
         '''
         User.myUser.remove(self)
-    
+    @classmethod
+    def find_by_username(cls,username):
+        '''
+        Method that takes in a username and return a string that matches that username
+
+        Args:
+            username: username to search for
+        Returns :
+            matching username
+        '''
+        for user in cls.myUser:
+            if user.username == username:
+                return user
