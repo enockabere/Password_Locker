@@ -1,4 +1,4 @@
- 
+
 import unittest # Importing the unittest module
 from credential import Credentials
 
@@ -15,7 +15,12 @@ class TestCredentials(unittest.TestCase):
         Set up method to run before each test cases
         '''
         self.new_credentials = Credentials("Instagram","assassin","wtf")
-    def test_initialization(self):
+    def tearDown(self):
+        '''
+        tearDown does cleanup after every test case has run
+        '''
+        Credentials.credentials_list = []
+    def test_init(self):
         '''
         Test initialization test case to test if the object is initialized properly
         '''
@@ -28,5 +33,13 @@ class TestCredentials(unittest.TestCase):
         '''
         self.new_credentials.save_logins()
         self.assertEqual(len(Credentials.credentials_list),1)
+    def test_save_multi_accounts(self):
+        '''
+        test case to check if we can save multiple accounts
+        '''
+        self.new_credentials.save_logins()
+        test_login = Credentials("Twitter","hello","123") #new login
+        test_login.save_logins()
+        self.assertEqual(len(Credentials.credentials_list),2)
 if __name__ ==  '__main__':
     unittest.main()
