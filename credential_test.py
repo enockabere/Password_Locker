@@ -22,6 +22,11 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(self.new_credentials.app_name,"Instagram")
         self.assertEqual(self.new_credentials.account_username,"assassin")
         self.assertEqual(self.new_credentials.account_password,"wtf")
-        
+    def test_save_credential(self):
+        '''
+        test case to check whether objects are saved to credential list
+        '''
+        self.new_credentials.save_logins()
+        self.assertEqual(len(Credentials.credentials_list),1)
 if __name__ ==  '__main__':
     unittest.main()
