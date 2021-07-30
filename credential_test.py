@@ -60,5 +60,15 @@ class TestCredentials(unittest.TestCase):
         
         found_login = Credentials.find_by_appName("Twitter")
         self.assertEqual(found_login.account_username,test_login.account_username)
+    def test_login_exists(self):
+        '''
+        test to check whether an object exists in a list
+        '''
+        self.new_credentials.save_logins()
+        test_login = Credentials("Twitter","hello","123")
+        test_login.save_logins()
+        
+        login_exists = Credentials.login_exists("Twitter","hello","123")
+        self.assertTrue(login_exists)
 if __name__ ==  '__main__':
     unittest.main()
