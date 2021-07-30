@@ -41,3 +41,14 @@ class Credentials:
         for login in cls.credentials_list:
             if login.app_name == app_name:
                 return login
+    @classmethod
+    def login_exists(cls,app_name,account_username,account_password):
+        '''
+        method checks if login exits from the credential list
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for login in cls.credentials_list:
+            if login.app_name == app_name and login.account_username == account_username and login.account_password == account_password:
+                return True
+        return False
