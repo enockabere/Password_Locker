@@ -70,5 +70,10 @@ class TestCredentials(unittest.TestCase):
         
         login_exists = Credentials.login_exists("Twitter","hello","123")
         self.assertTrue(login_exists)
+    def test_show_login(self):
+        '''
+        method to return a list of all saved logins
+        '''
+        self.assertEqual(Credentials.display_logins(),Credentials.credentials_list)
 if __name__ ==  '__main__':
     unittest.main()
