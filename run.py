@@ -39,3 +39,13 @@ def create_credentials(app_name,account_username,account_password):
     '''
     new_credentials = Credentials(app_name,account_username,account_password)
     return new_credentials
+def save_logins(new_credentials):
+    '''
+    Functions to save logins
+    '''
+    new_credentials.save_logins()
+def delete_logins(new_credentials):
+    '''
+    Function to delete credentials
+    '''
+    new_credentials.delete_logins()
