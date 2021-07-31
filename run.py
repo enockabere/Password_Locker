@@ -33,3 +33,9 @@ def display_user():
     Function to show all saved users
     '''
     return User.display_users()
+def create_credentials(app_name,account_username,account_password):
+    '''
+    Function to create new credentials
+    '''
+    new_credentials = Credentials(app_name,account_username,account_password)
+    return new_credentials
