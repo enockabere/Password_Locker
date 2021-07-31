@@ -23,3 +23,8 @@ def find_by_number(username):
     Function to find user by the username
     '''
     return User.find_by_username(username)
+def user_exists(username,password):
+    '''
+    Function to authenticate user
+    '''
+    return User.user_exists(username,password)
