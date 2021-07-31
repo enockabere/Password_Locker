@@ -54,3 +54,8 @@ def find_by_app_name(app_name):
     Function to check if an application exists
     '''
     return Credentials.find_by_appName(app_name)
+def login_exits(app_name,account_username,account_password):
+    '''
+    Function to check whether a login exists
+    '''
+    return Credentials.login_exists(app_name,account_username,account_password)
