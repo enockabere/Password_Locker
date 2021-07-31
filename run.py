@@ -64,3 +64,8 @@ def display_logins():
     Function that returns Login credentials for an app
     '''
     return Credentials.display_logins()
+def generate_a_password(passwordLength):
+    '''
+    Function that generates random password of 8 characters
+    '''
+    return Credentials.generate_password(passwordLength)
