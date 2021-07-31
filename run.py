@@ -129,7 +129,7 @@ def main():
 
                             if credentials_navigation == 'CC':
                                 print("\nCREATE NEW CREDENTIALS")
-                                print("-"*)
+                                print("-"*10)
                                 while True:
                                     print("Application name:")
                                     print(" "*4 + "*eg. Instagram/Tinder*")
