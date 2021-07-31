@@ -28,3 +28,8 @@ def user_exists(username,password):
     Function to authenticate user
     '''
     return User.user_exists(username,password)
+def display_user():
+    '''
+    Function to show all saved users
+    '''
+    return User.display_users()
