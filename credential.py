@@ -58,3 +58,11 @@ class Credentials:
         method that returns login list
         '''
         return cls.credentials_list
+    @staticmethod
+    def generate_password(passwordLength):
+        '''
+        method that generates a random password for the user
+        '''
+        random_alphanumeric = string.ascii_letters + string.digits
+        password = ''.join((random.choice(random_alphanumeric) for i in range(passwordLength)))
+        return password
