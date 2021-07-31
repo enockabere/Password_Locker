@@ -8,5 +8,8 @@ def create_user(username,password):
     '''
     myUser = User(username,password)
     return myUser
-
-            
+def save_user(user):
+    '''
+    Function to save user
+    '''
+    user.save_user()
