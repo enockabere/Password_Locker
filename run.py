@@ -59,3 +59,8 @@ def login_exits(app_name,account_username,account_password):
     Function to check whether a login exists
     '''
     return Credentials.login_exists(app_name,account_username,account_password)
+def display_logins():
+    '''
+    Function that returns Login credentials for an app
+    '''
+    return Credentials.display_logins()
