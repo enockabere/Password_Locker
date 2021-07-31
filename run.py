@@ -49,3 +49,8 @@ def delete_logins(new_credentials):
     Function to delete credentials
     '''
     new_credentials.delete_logins()
+def find_by_app_name(app_name):
+    '''
+    Function to check if an application exists
+    '''
+    return Credentials.find_by_appName(app_name)
