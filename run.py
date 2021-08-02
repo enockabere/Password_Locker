@@ -71,18 +71,17 @@ def generate_a_password(passwordLength):
     return Credentials.generate_password(passwordLength)
 def main():
     print('*'*10 + "Welcome to Password Locker" + '*'*10)
-    print('--'*10)
+    print('--'*22)
     print('We are Here to manage your passwords')
     while True:
-        print("Tell us your name")
-        session_user=input().strip('').capitalize
-        if session_user !='':
+        session_user=input("Tell us your name\n")
+        if session_user.strip().capitalize !='':
             print(f"\nHello {session_user},")
             while True:
-                print("Use these short codes for navigation: \n CA - Create an Account \n SI - Sign into an existing account \n DA - Delete your account \n EX - Exit ")
-                short_code = input().upper()
+                print
+                my_code = input("Use these short codes for navigation: \n CA - Create an Account \n SI - Sign into an existing account \n DA - Delete your account \n EX - Exit ")
 
-                if short_code == 'CA':
+                if my_code.upper() == 'CA':
                     print("\nCREATE AN ACCOUNT")
                     print("-"*10)
                     print("Enter name to use as your username")
@@ -110,7 +109,7 @@ def main():
                             continue
                         break
 
-                elif short_code == 'SI':
+                elif my_code == 'SI':
                     print("\nSIGN IN")
                     print("-"*10)
 
@@ -282,7 +281,7 @@ def main():
                         print("Try again or create an account\n")
                         continue
                 
-                elif short_code == 'DA':
+                elif my_code == 'DA':
                     if len(User.users_list) >= 1:
                         print("\nDELETE YOUR ACCOUNT")
                         print("-"*19)
@@ -316,7 +315,7 @@ def main():
                         print("\nSorry, there are no active accounts at the moment.\n")
                         continue
 
-                elif short_code == 'EX':
+                elif my_code == 'EX':
                     print("\nBye....")
                     break
 

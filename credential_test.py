@@ -3,7 +3,7 @@ from credential import Credentials
 
 class TestCredentials(unittest.TestCase):
     '''
-    Test class that defines test cases for Credentials class behaviours
+    Test class that defines test cases for Credentials class behavior
     
     Args:
         unittest.TestCase: TestCase class that  helps in creating test cases
